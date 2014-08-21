@@ -4,6 +4,7 @@
   "description": "Returns a `Range` instance from the current document selection",
   "main": "index.js",
   "scripts": {
+    "prepublish": "tsc --module commonjs --declaration index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
