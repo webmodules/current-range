@@ -1,3 +1,4 @@
+/// <reference path='require.d.ts' />
 
 /**
  * JavaScript dependencies.
