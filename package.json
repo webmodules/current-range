@@ -1,6 +1,6 @@
 {
   "name": "current-range",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Returns a `Range` instance from the current document selection",
   "main": "index.js",
   "scripts": {
