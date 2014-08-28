@@ -1,27 +1,28 @@
 /// <reference path='require.d.ts' />
 
 /**
- * JavaScript dependencies.
+ * TypeScript dependencies.
  */
 
-var getWindow = require('get-window');
+import currentSelection = require('current-selection');
 
 /**
- * Returns a `Range` instance from the given Window or Document instance.
+ * Returns a `Range` instance from the given Window, Document, DOM
+ * Element or Selection instance.
+ *
  * Defaults to index `0`, but you may specify another index if desired.
  *
- * @param {Window|Document} doc - Window or Document instance to get the
- *   current selection Range from.
+ * @param {Window|Document|Element|Selection} doc - Window, Document, DOM element,
+ *   or Selection instance to get the current selection Range from.
  * @return {Range} returns a Range instance, or `null` if there's no
  *   current selection.
  * @public
  */
 
 function currentRange (doc: any, index?: number): Range {
-  var win: Window = getWindow(doc);
-  var sel: Selection = win.getSelection();
+  var sel: Selection = currentSelection(doc);
   index |= 0;
-  if (sel.rangeCount <= index) return null;
+  if (!sel || sel.rangeCount <= index) return null;
   return sel.getRangeAt(index);
 }
 

@@ -27,6 +27,6 @@
   },
   "homepage": "https://github.com/webmodules/current-range",
   "dependencies": {
-    "get-window": "0.0.2"
+    "current-selection": "1.1.0"
   }
 }
